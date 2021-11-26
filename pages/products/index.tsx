@@ -6,7 +6,7 @@ export interface ProductPageProps {
   movie: any[];
 }
 
-export default function App(props : ProductPageProps) {
+export default function Product(props : ProductPageProps) {
 
   const { movie } = props;
 
