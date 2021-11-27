@@ -3,6 +3,7 @@ import { useRouter } from 'next/dist/client/router';
 import * as React from 'react';
 import dynamic from 'next/dynamic';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
+import { MainLayout } from '@/components/layout';
 
 
 const Header = dynamic(() => import('@/components/common/Header'), { ssr: false }) // component header only run at client-side
@@ -49,7 +50,7 @@ export default function Promotion(props: PromotionPageProps) {
         <div>
             Promotion Page
 
-            <Header></Header>
+            {/* <Header></Header> */}
 
             <ul className='ul'>
                 {
@@ -64,6 +65,8 @@ export default function Promotion(props: PromotionPageProps) {
         </div>
     );
 }
+
+Promotion.Layout = MainLayout; //component use main layout, assign layout for component 
 
 export const getStaticProps: GetStaticProps<PromotionPageProps> = async (context: GetStaticPropsContext) => {
 
